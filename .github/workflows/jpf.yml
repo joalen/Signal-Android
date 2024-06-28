@@ -54,7 +54,7 @@ jobs:
             command="java -jar $runjpf_jar +classpath=$jar_file $main_class"
             $command
 
-            if (echo $command | grep -q "caution: filename not matched: META-INF/MANIFEST.MF"; then
+            if echo "$OUTPUT" | grep -q "caution: filename not matched: META-INF/MANIFEST.MF"; then
               exit 1
             fi
         done
